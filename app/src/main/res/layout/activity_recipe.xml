@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relative_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/recipe_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/recipe_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/ripple"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:onClick="closeRecipeUI"
+                    android:src="@drawable/ic_arrow_circle_left"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/recipe_name"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="45dp"
+                    android:gravity="center"
+                    android:text="Matter Panner Masala" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_below="@id/recipe_toolbar"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp">
+
+                <ImageView
+                    android:id="@+id/recipe_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cropToPadding="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_image" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/cat_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/recipe_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Matar Paner Masala"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/recipe_cat"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:padding="2dp"
+                    android:src="@drawable/goat" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cat_area"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="0dp"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/l1img1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="25dp"
+                    android:contentDescription="Make it Tint"
+                    android:padding="2dp"
+                    android:src="@drawable/ingredients" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_toEndOf="@id/l1img1"
+                    android:gravity="center"
+                    android:text="Ingridients" />
+
+                <ImageView
+                    android:id="@+id/show_ing"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/ripple"
+                    android:clickable="true"
+                    android:contentDescription="Make it Tint"
+                    android:onClick="showIngridients"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_add_circle" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/recipe_ing_meas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipe_ing_meas"
+                android:layout_marginTop="10dp"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/l2img1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="25dp"
+                    android:contentDescription="Make it Tint"
+                    android:padding="2dp"
+                    android:src="@drawable/recipe_book" />
+
+                <TextView
+                    android:id="@+id/l2txt"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_toEndOf="@id/l2img1"
+                    android:gravity="center"
+                    android:text="Instruction" />
+
+                <ImageView
+                    android:id="@+id/show_ins"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/ripple"
+                    android:clickable="true"
+                    android:contentDescription="Make it Tint"
+                    android:onClick="showInstruction"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_add_circle" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/recipe_instruction"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/linear2"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:hint="Please Wait While Instructuin Loads"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <com.leo.simplearcloader.SimpleArcLoader
+            android:id="@+id/loader"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:arc_style="simple_arc" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
